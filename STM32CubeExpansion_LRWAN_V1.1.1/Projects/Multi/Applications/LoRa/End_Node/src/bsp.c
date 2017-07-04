@@ -65,6 +65,7 @@
 #include "x_nucleo_iks01a2_humidity.h"
 #include "x_nucleo_iks01a2_pressure.h"
 #include "x_nucleo_iks01a2_temperature.h"
+#include "x_nucleo_iks01a2_accelero.h"
 #endif  /* X_NUCLEO_IKS01A1 */
 #endif  /* SENSOR_ENABLED */
 #endif  /* LRWAN_NS1 */
@@ -86,6 +87,7 @@
 void *HUMIDITY_handle = NULL;
 void *TEMPERATURE_handle = NULL;
 void *PRESSURE_handle = NULL;
+void *LSM6DSL_X_0_handle = NULL;
 #endif
 
 void BSP_sensor_Read( sensor_t *sensor_data)
@@ -94,15 +96,21 @@ void BSP_sensor_Read( sensor_t *sensor_data)
   float HUMIDITY_Value = 0;
   float TEMPERATURE_Value = 0;
   float PRESSURE_Value = 0;
+  //SensorAxes_t ACCELERO_Value;
+  uint8_t instance;
+  uint16_t step_count = 0;
 
 #if defined(SENSOR_ENABLED) || defined (LRWAN_NS1)
   BSP_HUMIDITY_Get_Hum(HUMIDITY_handle, &HUMIDITY_Value);
   BSP_TEMPERATURE_Get_Temp(TEMPERATURE_handle, &TEMPERATURE_Value);
   BSP_PRESSURE_Get_Press(PRESSURE_handle, &PRESSURE_Value);
+  BSP_ACCELERO_Get_Instance( LSM6DSL_X_0_handle, &instance );
+  BSP_ACCELERO_Get_Step_Count_Ext( LSM6DSL_X_0_handle, &step_count );
 #endif  
   sensor_data->humidity    = HUMIDITY_Value;
   sensor_data->temperature = TEMPERATURE_Value;
   sensor_data->pressure    = PRESSURE_Value;
+  sensor_data->step_counter = step_count;
   
   sensor_data->latitude  = (int32_t) ((STSOP_LATTITUDE  * MAX_GPS_POS) /90);
   sensor_data->longitude = (int32_t) ((STSOP_LONGITUDE  * MAX_GPS_POS )/180);
@@ -118,11 +126,13 @@ void  BSP_sensor_Init( void  )
   BSP_HUMIDITY_Init( HTS221_H_0, &HUMIDITY_handle );
   BSP_TEMPERATURE_Init( HTS221_T_0, &TEMPERATURE_handle );
   BSP_PRESSURE_Init( PRESSURE_SENSORS_AUTO, &PRESSURE_handle );
+  BSP_ACCELERO_Init( LSM6DSL_X_0, &LSM6DSL_X_0_handle);
   
   /* Enable sensors */
   BSP_HUMIDITY_Sensor_Enable( HUMIDITY_handle );
   BSP_TEMPERATURE_Sensor_Enable( TEMPERATURE_handle );
   BSP_PRESSURE_Sensor_Enable( PRESSURE_handle );
+  BSP_ACCELERO_Sensor_Enable( LSM6DSL_X_0_handle );
 #endif
     /* USER CODE END 6 */
 }

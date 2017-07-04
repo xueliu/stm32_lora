@@ -72,6 +72,7 @@ typedef struct{
   float pressure;    /* in mbar */  
   float temperature; /* in °C   */
   float humidity;    /* in %    */
+  uint16_t step_counter;
   int32_t latitude;
   int32_t longitude ;
   int16_t  altitudeGps;       /* in m */
