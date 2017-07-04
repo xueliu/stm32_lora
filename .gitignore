@@ -6,7 +6,8 @@
 **/settings/*.xcl  
 **/settings/*.dni  
 **/settings/*.wsdt  
-**/settings/*.wspos  
+**/settings/*.wspos
+**/settings/*.dnx
 
 # IAR Debug Exe  
 **/Exe/*.sim
@@ -23,3 +24,4 @@
 **/List/*.map
 *.ewt
 *.dep
+*.log
