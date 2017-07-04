@@ -1,0 +1,25 @@
+# IAR Settings  
+**/settings/*.crun  
+**/settings/*.dbgdt  
+**/settings/*.cspy  
+**/settings/*.cspy.*  
+**/settings/*.xcl  
+**/settings/*.dni  
+**/settings/*.wsdt  
+**/settings/*.wspos  
+
+# IAR Debug Exe  
+**/Exe/*.sim
+**/Exe/*.out
+**/Exe/*.bin
+
+# IAR Debug Obj  
+**/Obj/*.pbd  
+**/Obj/*.pbd.*  
+**/Obj/*.pbi  
+**/Obj/*.pbi.*
+**/Obj/*.o
+
+**/List/*.map
+*.ewt
+*.dep
