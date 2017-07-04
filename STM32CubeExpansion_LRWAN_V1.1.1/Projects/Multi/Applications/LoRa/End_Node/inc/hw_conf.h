@@ -126,14 +126,14 @@ Maintainer: Miguel Luis and Gregory Cristian
 
 /* --------Preprocessor compile swicth------------ */
 /* debug swicthes in debug.h */
-//#define DEBUG
+#define DEBUG
 //#define TRACE
    
 /* uncomment below line to never enter lowpower modes in main.c*/
 //#define LOW_POWER_DISABLE
 
 /* debug swicthes in bsp.c */
-//#define SENSOR_ENABLED
+#define SENSOR_ENABLED
    
    
 /* Exported types ------------------------------------------------------------*/
