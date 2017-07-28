@@ -106,6 +106,7 @@ void BSP_sensor_Read( sensor_t *sensor_data)
   BSP_PRESSURE_Get_Press(PRESSURE_handle, &PRESSURE_Value);
   BSP_ACCELERO_Get_Instance( LSM6DSL_X_0_handle, &instance );
   BSP_ACCELERO_Get_Step_Count_Ext( LSM6DSL_X_0_handle, &step_count );
+  PRINTF("STEP COUNT: %d\n\r", step_count);
 #endif  
   sensor_data->humidity    = HUMIDITY_Value;
   sensor_data->temperature = TEMPERATURE_Value;
@@ -133,6 +134,9 @@ void  BSP_sensor_Init( void  )
   BSP_TEMPERATURE_Sensor_Enable( TEMPERATURE_handle );
   BSP_PRESSURE_Sensor_Enable( PRESSURE_handle );
   BSP_ACCELERO_Sensor_Enable( LSM6DSL_X_0_handle );
+
+  /* Enable pedometer */
+  BSP_ACCELERO_Enable_Pedometer_Ext( LSM6DSL_X_0_handle );
 #endif
     /* USER CODE END 6 */
 }
