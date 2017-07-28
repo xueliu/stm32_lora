@@ -216,6 +216,26 @@
 			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/Components/lps25hb/LPS25HB_Driver_HL.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/BSP/Components/LSM303AGR_ACC_driver.c</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/Components/lsm303agr/LSM303AGR_ACC_driver.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/LSM303AGR_ACC_driver_HL.c</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/Components/lsm303agr/LSM303AGR_ACC_driver_HL.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/LSM6DSL_ACC_GYRO_driver.c</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/Components/lsm6dsl/LSM6DSL_ACC_GYRO_driver.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/LSM6DSL_ACC_GYRO_driver_HL.c</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/Components/lsm6dsl/LSM6DSL_ACC_GYRO_driver_HL.c</locationURI>
+		</link>
+		<link>
 			<name>Drivers/BSP/Components/sx1276.c</name>
 			<type>1</type>
 			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/Components/sx1276/sx1276.c</locationURI>
@@ -249,6 +269,11 @@
 			<name>Drivers/BSP/X_NUCLEO_IKS01A2/x_nucleo_iks01a2.c</name>
 			<type>1</type>
 			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/X_NUCLEO_IKS01A2/x_nucleo_iks01a2.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/X_NUCLEO_IKS01A2/x_nucleo_iks01a2_accelero.c</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/X_NUCLEO_IKS01A2/x_nucleo_iks01a2_accelero.c</locationURI>
 		</link>
 		<link>
 			<name>Drivers/BSP/X_NUCLEO_IKS01A2/x_nucleo_iks01a2_humidity.c</name>
